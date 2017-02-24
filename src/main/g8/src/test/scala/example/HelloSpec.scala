@@ -1,9 +1,11 @@
 package example
 
-import org.scalatest._
+import org.specs2._
 
-class HelloSpec extends FlatSpec with Matchers {
-  "The Hello object" should "say hello" in {
-    Hello.greeting shouldEqual "hello"
-  }
+class HelloSpec extends mutable.Specification {
+  "The Hello object" should {
+    "say hello" in {
+      Hello.greeting === "hello"
+    }
+}
 }
