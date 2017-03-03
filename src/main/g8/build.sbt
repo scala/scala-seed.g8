@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
       scalaVersion := "2.12.1",
       version      := "0.1.0-SNAPSHOT"
     )),
-    name := "name;format=normalize",
+    name := "$name;format="norm"$",
     libraryDependencies ++= Seq(
       specs2Core % Test
     ),
