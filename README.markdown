@@ -8,6 +8,7 @@ Diferences from the canonical scala-seed:
 
 * Use specs2 instead of scalatest
 * Recomended Scala Options (some of them a bit controverse)
+* Use template variables
 
 License
 -------
