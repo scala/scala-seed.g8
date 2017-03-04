@@ -1,3 +1,5 @@
+![travis ci](https://travis-ci.org/ragb/scala-seed.g8.svg?branch=master)
+
 This is a [Giter8][g8] template for Scala
 
 ```
