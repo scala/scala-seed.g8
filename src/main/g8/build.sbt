@@ -27,5 +27,9 @@ lazy val root = (project in file(".")).
   "-Ywarn-value-discard",
   "-Xfuture",
   "-Ywarn-unused-import"     // 2.11 only
-)
+      ),
+    scalacOptions in (Compile, console) --= Seq(
+      "-Ywarn-unused-import",
+      "-Xfatal-warnings"
+    )
   )
