@@ -9,6 +9,7 @@ sbt new ragb/scala-seed.g8
 Diferences from the canonical scala-seed:
 
 * Use specs2 instead of scalatest
+* Have scalacheck as a test dependency by default
 * Recomended Scala Options (some of them a bit controverse)
 * Use template variables
 
