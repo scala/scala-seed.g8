@@ -5,19 +5,20 @@ group: stable
 language: scala
 
 env:
-  - TRAVIS_JDK=8.0.212.hs-adpt
+  - ADOPTOPENJDK=8
 
 before_install:
   # adding $HOME/.sdkman to cache would create an empty directory, which interferes with the initial installation
-  - "[[ -d /home/travis/.sdkman/ ]] && [[ -d /home/travis/.sdkman/bin/ ]] || rm -rf /home/travis/.sdkman/"
+  - "[[ -d $HOME/.sdkman/bin/ ]] || rm -rf $HOME/.sdkman/"
   - curl -sL https://get.sdkman.io | bash
-  - echo sdkman_auto_answer=true > /home/travis/.sdkman/etc/config
-  - source "/home/travis/.sdkman/bin/sdkman-init.sh"
+  - echo sdkman_auto_answer=true > $HOME/.sdkman/etc/config
+  - source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 install:
-  - sdk install java $TRAVIS_JDK
-  - unset _JAVA_OPTIONS
+  - sdk install java $(sdk list java | grep -o "$ADOPTOPENJDK\.[0-9\.]*hs-adpt" | head -1)
+  - unset JAVA_HOME
   - java -Xmx32m -version
+  - javac -J-Xmx32m -version
 
 script:
   ## This runs the template with the default parameters, and runs test within the templated app.
