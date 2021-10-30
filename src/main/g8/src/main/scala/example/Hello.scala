@@ -1,9 +1,6 @@
 package example
 
-object Hello extends Greeting with App {
+@main def hello: Unit =
   println(greeting)
-}
 
-trait Greeting {
-  lazy val greeting: String = "hello"
-}
+def greeting: String = "hello"
