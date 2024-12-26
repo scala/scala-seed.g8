@@ -11,11 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: coursier/cache-action@v6
     - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 8
+        cache: sbt
+    - uses: sbt/setup-sbt@v1
     - name: Test
       # This runs the template with the default parameters, and runs test within the templated app.
       run: sbt -Dfile.encoding=UTF8 test
